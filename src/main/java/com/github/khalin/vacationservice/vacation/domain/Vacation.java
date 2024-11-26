@@ -9,11 +9,13 @@ import java.time.LocalDate;
 @Getter
 public class Vacation {
 
+    private Long id;
     private String email;
     private LocalDate startDate;
     private LocalDate endDate;
     private Boolean isHalfDayOff;
     private String reason;
+    private Boolean isCanceled;
 
     public void isHalfDayOff() {
         if(isHalfDayOff) {
@@ -21,6 +23,11 @@ public class Vacation {
                 throw new IllegalArgumentException("Half day off can be only for one day");
             }
         }
+    }
 
+    public Vacation cancelVacation() {
+        this.isCanceled = true;
+
+        return this;
     }
 }

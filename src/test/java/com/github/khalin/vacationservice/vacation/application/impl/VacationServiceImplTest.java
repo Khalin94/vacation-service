@@ -1,11 +1,9 @@
-package com.github.khalin.vacationservice.vacation.service.impl;
+package com.github.khalin.vacationservice.vacation.application.impl;
 
-import com.github.khalin.vacationservice.vacation.domain.Vacation;
-import com.github.khalin.vacationservice.vacation.web.VacationService;
-import com.github.khalin.vacationservice.vacation.web.request.VacationRequest;
+import com.github.khalin.vacationservice.vacation.presentation.VacationService;
+import com.github.khalin.vacationservice.vacation.presentation.request.VacationRequest;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.LocalDate;
 

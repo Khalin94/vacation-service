@@ -1,6 +1,6 @@
-package com.github.khalin.vacationservice.vacation.web;
+package com.github.khalin.vacationservice.vacation.presentation;
 
-import com.github.khalin.vacationservice.vacation.web.request.VacationRequest;
+import com.github.khalin.vacationservice.vacation.presentation.request.VacationRequest;
 
 public interface VacationService {
 

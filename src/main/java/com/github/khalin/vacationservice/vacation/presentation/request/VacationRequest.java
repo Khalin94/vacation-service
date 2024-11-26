@@ -1,4 +1,4 @@
-package com.github.khalin.vacationservice.vacation.web.request;
+package com.github.khalin.vacationservice.vacation.presentation.request;
 
 import com.github.khalin.vacationservice.vacation.domain.Vacation;
 import lombok.Builder;

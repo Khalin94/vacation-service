@@ -1,4 +1,4 @@
-package com.github.khalin.vacationservice.vacation.repository.entity;
+package com.github.khalin.vacationservice.vacation.infrastructure.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

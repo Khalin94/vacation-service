@@ -1,9 +1,8 @@
-package com.github.khalin.vacationservice.vacation.service.impl;
+package com.github.khalin.vacationservice.vacation.application.impl;
 
 import com.github.khalin.vacationservice.vacation.domain.Vacation;
-import com.github.khalin.vacationservice.vacation.service.VacationRepository;
-import com.github.khalin.vacationservice.vacation.web.VacationService;
-import com.github.khalin.vacationservice.vacation.web.request.VacationRequest;
+import com.github.khalin.vacationservice.vacation.presentation.VacationService;
+import com.github.khalin.vacationservice.vacation.presentation.request.VacationRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

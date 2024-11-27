@@ -1,7 +1,7 @@
 package com.github.khalin.vacationservice.vacation.application.impl;
 
 import com.github.khalin.vacationservice.vacation.application.VacationRepository;
-import com.github.khalin.vacationservice.vacation.domain.Vacation;
+import com.github.khalin.vacationservice.vacation.domain.VacationApply;
 import com.github.khalin.vacationservice.vacation.fake.FakeVacationRepository;
 import com.github.khalin.vacationservice.vacation.infrastructure.entity.VacationEntity;
 import com.github.khalin.vacationservice.vacation.presentation.VacationService;
@@ -57,9 +57,9 @@ class VacationServiceImplTest {
         VacationService service = new VacationServiceImpl(repository);
 
         //when
-        Vacation vacation = service.cancelVacation(entity.getId());
+        VacationApply vacationApply = service.cancelVacation(entity.getId());
 
         //then
-        assertThat(vacation.getIsCanceled()).isTrue();
+        assertThat(vacationApply.getIsCanceled()).isTrue();
     }
 }

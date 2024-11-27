@@ -1,7 +1,7 @@
 package com.github.khalin.vacationservice.vacation.application.impl;
 
 import com.github.khalin.vacationservice.vacation.application.VacationRepository;
-import com.github.khalin.vacationservice.vacation.domain.Vacation;
+import com.github.khalin.vacationservice.vacation.domain.VacationApply;
 import com.github.khalin.vacationservice.vacation.infrastructure.entity.VacationEntity;
 import com.github.khalin.vacationservice.vacation.presentation.VacationService;
 import com.github.khalin.vacationservice.vacation.presentation.request.VacationRequest;
@@ -19,20 +19,20 @@ public class VacationServiceImpl implements VacationService {
     @Override
     public void requestVacation(VacationRequest vacationRequest, String email) {
 
-        Vacation vacation = vacationRequest.toModel(email);
-        vacation.isHalfDayOff();
+        VacationApply vacationApply = vacationRequest.toModel(email);
+        vacationApply.isHalfDayOff();
 
-        vacationRepository.save(VacationEntity.from(vacation));
+        vacationRepository.save(VacationEntity.from(vacationApply));
 
     }
 
     @Override
-    public Vacation cancelVacation(Long id) {
+    public VacationApply cancelVacation(Long id) {
 
         VacationEntity vacationEntity = vacationRepository.findById(id);
-        Vacation vacation = vacationEntity.toModel()
-                                          .cancelVacation();
-        return vacationRepository.update(VacationEntity.from(vacation)).toModel();
+        VacationApply vacationApply = vacationEntity.toModel()
+                                                    .cancelVacation();
+        return vacationRepository.update(VacationEntity.from(vacationApply)).toModel();
 
     }
 

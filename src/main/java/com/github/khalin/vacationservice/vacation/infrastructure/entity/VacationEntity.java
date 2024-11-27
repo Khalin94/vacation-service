@@ -1,6 +1,6 @@
 package com.github.khalin.vacationservice.vacation.infrastructure.entity;
 
-import com.github.khalin.vacationservice.vacation.domain.Vacation;
+import com.github.khalin.vacationservice.vacation.domain.VacationApply;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.AccessLevel;
@@ -35,27 +35,27 @@ public class VacationEntity {
         this.isCanceled = isCanceled;
     }
 
-    public Vacation toModel() {
-        return Vacation.builder()
-                       .id(this.getId())
-                       .email(this.email)
-                       .startDate(this.startDate)
-                       .endDate(this.endDate)
-                       .reason(this.reason)
-                       .isHalfDayOff(this.isHalfDayOff)
-                       .isCanceled(this.isCanceled)
-                       .build();
+    public VacationApply toModel() {
+        return VacationApply.builder()
+                            .id(this.getId())
+                            .email(this.email)
+                            .startDate(this.startDate)
+                            .endDate(this.endDate)
+                            .reason(this.reason)
+                            .isHalfDayOff(this.isHalfDayOff)
+                            .isCanceled(this.isCanceled)
+                            .build();
     }
 
-    public static VacationEntity from(Vacation vacation) {
+    public static VacationEntity from(VacationApply vacationApply) {
         return VacationEntity.builder()
-                             .id(vacation.getId())
-                             .email(vacation.getEmail())
-                             .startDate(vacation.getStartDate())
-                             .endDate(vacation.getEndDate())
-                             .reason(vacation.getReason())
-                             .isHalfDayOff(vacation.getIsHalfDayOff())
-                             .isCanceled(vacation.getIsCanceled())
+                             .id(vacationApply.getId())
+                             .email(vacationApply.getEmail())
+                             .startDate(vacationApply.getStartDate())
+                             .endDate(vacationApply.getEndDate())
+                             .reason(vacationApply.getReason())
+                             .isHalfDayOff(vacationApply.getIsHalfDayOff())
+                             .isCanceled(vacationApply.getIsCanceled())
                              .build();
     }
 

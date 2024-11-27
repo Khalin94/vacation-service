@@ -1,6 +1,6 @@
 package com.github.khalin.vacationservice.vacation.presentation.request;
 
-import com.github.khalin.vacationservice.vacation.domain.Vacation;
+import com.github.khalin.vacationservice.vacation.domain.VacationApply;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -15,14 +15,14 @@ public class VacationRequest {
     private Boolean isHalfDayOff;
     private String reason;
 
-    public Vacation toModel(String email) {
-        return Vacation.builder()
-                .email(email)
-                .startDate(startDate)
-                .endDate(endDate)
-                .isHalfDayOff(isHalfDayOff)
-                .reason(reason)
-                .build();
+    public VacationApply toModel(String email) {
+        return VacationApply.builder()
+                            .email(email)
+                            .startDate(startDate)
+                            .endDate(endDate)
+                            .isHalfDayOff(isHalfDayOff)
+                            .reason(reason)
+                            .build();
     }
 
 }

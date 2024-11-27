@@ -7,7 +7,7 @@ import java.time.LocalDate;
 
 @Builder
 @Getter
-public class Vacation {
+public class VacationApply {
 
     private Long id;
     private String email;
@@ -25,7 +25,7 @@ public class Vacation {
         }
     }
 
-    public Vacation cancelVacation() {
+    public VacationApply cancelVacation() {
         this.isCanceled = true;
 
         return this;

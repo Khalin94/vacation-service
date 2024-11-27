@@ -2,7 +2,7 @@ package com.github.khalin.vacationservice.vacation.infrastructure;
 
 import com.github.khalin.vacationservice.exception.NotFoundException;
 import com.github.khalin.vacationservice.vacation.application.VacationRepository;
-import com.github.khalin.vacationservice.vacation.infrastructure.entity.VacationEntity;
+import com.github.khalin.vacationservice.vacation.infrastructure.entity.VacationApplyEntity;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -14,20 +14,20 @@ public class VacationRepositoryImpl implements VacationRepository {
 
 
     @Override
-    public VacationEntity findById(Long id) {
+    public VacationApplyEntity findById(Long id) {
 
         return vacationRepository.findById(id)
                                  .orElseThrow(() -> new NotFoundException("can not found vacation id : " + id));
     }
 
     @Override
-    public void save(VacationEntity vacationEntity) {
-        vacationRepository.save(vacationEntity);
+    public void save(VacationApplyEntity vacationApplyEntity) {
+        vacationRepository.save(vacationApplyEntity);
 
     }
 
     @Override
-    public VacationEntity update(VacationEntity vacationEntity) {
-        return vacationRepository.save(vacationEntity);
+    public VacationApplyEntity update(VacationApplyEntity vacationApplyEntity) {
+        return vacationRepository.save(vacationApplyEntity);
     }
 }

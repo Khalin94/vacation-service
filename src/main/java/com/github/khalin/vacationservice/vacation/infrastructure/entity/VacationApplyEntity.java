@@ -13,7 +13,7 @@ import java.time.LocalDate;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @Entity
-public class VacationEntity {
+public class VacationApplyEntity {
 
     @Id
     private Long id;
@@ -25,7 +25,7 @@ public class VacationEntity {
     private Boolean isCanceled;
 
     @Builder
-    public VacationEntity(Long id, String email, LocalDate startDate, LocalDate endDate, Boolean isHalfDayOff, String reason, Boolean isCanceled) {
+    public VacationApplyEntity(Long id, String email, LocalDate startDate, LocalDate endDate, Boolean isHalfDayOff, String reason, Boolean isCanceled) {
         this.id = id;
         this.email = email;
         this.startDate = startDate;
@@ -47,16 +47,16 @@ public class VacationEntity {
                             .build();
     }
 
-    public static VacationEntity from(VacationApply vacationApply) {
-        return VacationEntity.builder()
-                             .id(vacationApply.getId())
-                             .email(vacationApply.getEmail())
-                             .startDate(vacationApply.getStartDate())
-                             .endDate(vacationApply.getEndDate())
-                             .reason(vacationApply.getReason())
-                             .isHalfDayOff(vacationApply.getIsHalfDayOff())
-                             .isCanceled(vacationApply.getIsCanceled())
-                             .build();
+    public static VacationApplyEntity from(VacationApply vacationApply) {
+        return VacationApplyEntity.builder()
+                                  .id(vacationApply.getId())
+                                  .email(vacationApply.getEmail())
+                                  .startDate(vacationApply.getStartDate())
+                                  .endDate(vacationApply.getEndDate())
+                                  .reason(vacationApply.getReason())
+                                  .isHalfDayOff(vacationApply.getIsHalfDayOff())
+                                  .isCanceled(vacationApply.getIsCanceled())
+                                  .build();
     }
 
 }

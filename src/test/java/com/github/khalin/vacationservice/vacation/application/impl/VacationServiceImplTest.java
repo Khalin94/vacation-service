@@ -3,7 +3,7 @@ package com.github.khalin.vacationservice.vacation.application.impl;
 import com.github.khalin.vacationservice.vacation.application.VacationRepository;
 import com.github.khalin.vacationservice.vacation.domain.VacationApply;
 import com.github.khalin.vacationservice.vacation.fake.FakeVacationRepository;
-import com.github.khalin.vacationservice.vacation.infrastructure.entity.VacationEntity;
+import com.github.khalin.vacationservice.vacation.infrastructure.entity.VacationApplyEntity;
 import com.github.khalin.vacationservice.vacation.presentation.VacationService;
 import com.github.khalin.vacationservice.vacation.presentation.request.VacationRequest;
 import org.junit.jupiter.api.DisplayName;
@@ -41,15 +41,15 @@ class VacationServiceImplTest {
     @Test
     public void cancelVacationTest() {
         //given
-        VacationEntity entity = VacationEntity.builder()
-                                              .id(1L)
-                                              .email("test@gmail.com")
-                                              .isCanceled(false)
-                                              .isHalfDayOff(false)
-                                              .startDate(LocalDate.of(2024, 11, 20))
-                                              .endDate(LocalDate.of(2024, 11, 22))
-                                              .reason("test")
-                                              .build();
+        VacationApplyEntity entity = VacationApplyEntity.builder()
+                                                        .id(1L)
+                                                        .email("test@gmail.com")
+                                                        .isCanceled(false)
+                                                        .isHalfDayOff(false)
+                                                        .startDate(LocalDate.of(2024, 11, 20))
+                                                        .endDate(LocalDate.of(2024, 11, 22))
+                                                        .reason("test")
+                                                        .build();
 
         VacationRepository repository = new FakeVacationRepository();
         repository.save(entity);

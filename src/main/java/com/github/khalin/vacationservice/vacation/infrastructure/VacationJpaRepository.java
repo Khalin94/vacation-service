@@ -1,7 +1,10 @@
 package com.github.khalin.vacationservice.vacation.infrastructure;
 
-import com.github.khalin.vacationservice.vacation.infrastructure.entity.VacationApplyEntity;
+import com.github.khalin.vacationservice.vacation.infrastructure.entity.VacationEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface VacationJpaRepository extends JpaRepository<VacationApplyEntity, Long> {
+import java.util.Optional;
+
+public interface VacationJpaRepository extends JpaRepository<VacationEntity, Long> {
+    Optional<VacationEntity> findByEmail(String email);
 }

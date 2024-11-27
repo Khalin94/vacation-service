@@ -1,12 +1,13 @@
 package com.github.khalin.vacationservice.vacation.application;
 
-import com.github.khalin.vacationservice.vacation.infrastructure.entity.VacationApplyEntity;
+import com.github.khalin.vacationservice.vacation.infrastructure.entity.VacationEntity;
 
 public interface VacationRepository {
 
-    VacationApplyEntity findById(Long id);
+    VacationEntity findById(Long id);
 
-    void save(VacationApplyEntity vacationApplyEntity);
+    void save(VacationEntity vacationEntity);
 
-    VacationApplyEntity update(VacationApplyEntity vacationApplyEntity);
+    VacationEntity findByEmail(String email);
+
 }

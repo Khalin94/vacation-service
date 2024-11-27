@@ -1,7 +1,9 @@
 package com.github.khalin.vacationservice.vacation.application.impl;
 
+import com.github.khalin.vacationservice.vacation.application.VacationApplyRepository;
 import com.github.khalin.vacationservice.vacation.application.VacationRepository;
 import com.github.khalin.vacationservice.vacation.domain.VacationApply;
+import com.github.khalin.vacationservice.vacation.fake.FakeVacationApplyRepository;
 import com.github.khalin.vacationservice.vacation.fake.FakeVacationRepository;
 import com.github.khalin.vacationservice.vacation.infrastructure.entity.VacationApplyEntity;
 import com.github.khalin.vacationservice.vacation.presentation.VacationService;
@@ -31,7 +33,7 @@ class VacationServiceImplTest {
         //then
         assertThrows(IllegalArgumentException.class, () -> {
             VacationService service = VacationServiceImpl.builder()
-                                                         .vacationRepository(new FakeVacationRepository())
+                                                         .vacationApplyRepository(new FakeVacationApplyRepository())
                                                          .build();
             service.requestVacation(request, "test@gmail.com");
         });
@@ -51,10 +53,12 @@ class VacationServiceImplTest {
                                                         .reason("test")
                                                         .build();
 
-        VacationRepository repository = new FakeVacationRepository();
-        repository.save(entity);
+        VacationApplyRepository vacationApplyRepository = new FakeVacationApplyRepository();
+        vacationApplyRepository.save(entity);
 
-        VacationService service = new VacationServiceImpl(repository);
+        VacationRepository vacationRepository = new FakeVacationRepository();
+
+        VacationService service = new VacationServiceImpl(vacationApplyRepository, vacationRepository);
 
         //when
         VacationApply vacationApply = service.cancelVacation(entity.getId());

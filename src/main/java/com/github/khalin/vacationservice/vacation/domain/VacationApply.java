@@ -30,4 +30,8 @@ public class VacationApply {
 
         return this;
     }
+
+    public Long vacationDays() {
+        return endDate.toEpochDay() - startDate.toEpochDay();
+    }
 }

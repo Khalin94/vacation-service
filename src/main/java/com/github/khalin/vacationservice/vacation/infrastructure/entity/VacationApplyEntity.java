@@ -3,6 +3,7 @@ package com.github.khalin.vacationservice.vacation.infrastructure.entity;
 import com.github.khalin.vacationservice.vacation.domain.VacationApply;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -12,6 +13,7 @@ import java.time.LocalDate;
 
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
+@Table(name = "vacation_apply")
 @Entity
 public class VacationApplyEntity {
 
